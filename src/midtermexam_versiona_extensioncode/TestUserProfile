@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class TestUserProfile {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+
+        System.out.println("Choose your favorite genre:");
+        System.out.println("1. Action");
+        System.out.println("2. Comedy");
+        System.out.println("3. Drama");
+
+        int choice = scanner.nextInt();
+        String genre = "";
+
+        switch (choice) {
+            case 1:
+                genre = "Action";
+                break;
+            case 2:
+                genre = "Comedy";
+                break;
+            case 3:
+                genre = "Drama";
+                break;
+            default:
+                System.out.println("Invalid choice");
+                System.exit(0);
+        }
+
+        UserProfile userProfile = new UserProfile(name, genre);
+        System.out.println("Your userProfile was created!");
+    }
+}
